@@ -1,0 +1,38 @@
+
+<div class="container">
+ <div class="top text-center logo space">
+  <%= image_tag("logo.png")%>
+  <h2>BBQ community</h2>
+  <h3>Rent you BBQ's</h3>
+  <br>
+  <div class="text-center">
+   <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Options</button>
+ </div>
+ <hr>
+ <div id="demo" class="collapse text-center route space">
+  <h3><%= link_to "Home", root_path%></h3>
+  <h3><%= link_to "Perfil", perfil_path(current_user.perfil)%></h3>
+  <hr>
+</div>
+</div>
+<div class="container text-center">
+  <h2><%= @barbacoa.titulo.capitalize %> </h2>
+  <h4><%= @barbacoa.modelo %></h4>
+  <% if @barbacoa.disponible === TRUE %>
+  <p style="color: #22ea63 !important;">Disponible</p>
+  <% else %>
+  <p style="color: #e4180a !important;">No disponible</p>
+  <% end %>
+  <p><%= @barbacoa.descripcion%></p>
+  <h5>Precio por dia</h5>
+  <h3><%= @barbacoa.precio%> $</h3>
+  <%if current_user.perfil.id == @perfil.id%>
+  <h3><%= link_to "Edit", edit_barbacoa_path(@barbacoa),  class: "btn btn-danger"%></h3>
+  <% else %>
+  <h3><%= link_to "Rentar", perfil_path(@barbacoa.perfil),  class: "btn btn-danger" %></h3>
+  <%end%>
+</div>
+
+</div>
+
+

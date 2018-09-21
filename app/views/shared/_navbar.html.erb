@@ -1,0 +1,8 @@
+<div class="container">
+    <% if user_signed_in? %>
+    <h2><%= link_to t(".sign_out", default: "Log out"), destroy_user_session_path, class: "btn btn-danger", method: :delete %></h2>
+    <% else %>
+    <!-- Login link (when logged out) -->
+    <h2><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-danger" %></h2>
+    <% end %>
+</div>

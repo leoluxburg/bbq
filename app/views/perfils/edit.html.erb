@@ -1,0 +1,12 @@
+
+   <div class="container">
+    <h1>Perfil</h1>
+          <%= simple_form_for @perfil do |f| %>
+              <%= f.input :nombre %>
+              <%= f.input :apellido %>
+              <%= f.input :phone %>
+              <br>
+              <%= f.submit class: "btn btn-danger"%>
+          <% end %>
+  </div>
+</div>

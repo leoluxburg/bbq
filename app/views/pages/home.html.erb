@@ -1,0 +1,48 @@
+<hr>
+<div class="container">
+  <% if user_signed_in? %>
+ <div class="top text-center logo space">
+  <%= image_tag("logo.png")%>
+  <h2>BBQ community</h2>
+    <h3>Rent you BBQ's</h3>
+  <br>
+  <div class="text-center">
+   <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Options</button>
+  </div>
+      <hr>
+  <div id="demo" class="collapse text-center route space">
+    <h3><%= link_to "Home", root_path%></h3>
+    <h3><%= link_to "Perfil", perfil_path(current_user.perfil)%></h3>
+    <hr>
+  </div>
+</div>
+  <% @bbqs.each do |bbq|%>
+<div class="col-xl-4">
+  <%= link_to barbacoa_path(bbq) do %>
+  <div class="text-center logo">
+    <%= image_tag("logo.png") %>
+    <p><%= bbq.titulo %></p>
+    <p><%= bbq.modelo %></p>
+  <% end %>
+   <% if bbq.disponible === TRUE %>
+      <p style="color: #22ea63 !important;">Disponible</p>
+      <br>
+      <% else %>
+      <p style="color: #e4180a !important;">No disponible</p>
+      <br>
+    <% end %>
+    </div>
+    <% end %>
+</div>
+</div>
+  <% else %>
+  <div class="container">
+  <div class="jumbotron">
+    <h2>BBQ community</h2>
+    <h3>Rent you BBQ's</h3>
+    <%= link_to "Sing up", new_user_registration_path, class: "btn btn-danger"%>
+  </div>
+
+</div>
+
+<% end %>

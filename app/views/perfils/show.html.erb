@@ -1,0 +1,52 @@
+<% if user_signed_in? %>
+<div class="container">
+   <div class="top text-center logo space">
+  <%= image_tag("logo.png")%>
+  <h2>BBQ community</h2>
+  <h3>Rent you BBQ's</h3>
+  <br>
+  <div class="text-center">
+   <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Options</button>
+ </div>
+ <hr>
+ <div id="demo" class="collapse text-center route space">
+  <h3><%= link_to "Home", root_path%></h3>
+  <h3><%= link_to "Perfil", perfil_path(current_user.perfil)%></h3>
+  <hr>
+</div>
+</div>
+  <div class="jumbotron">
+    <h2>Rent ur BBQ</h2>
+    <hr>
+    <%if current_user.perfil.id != @perfil.id%>
+      <h2>Contacta</h2>
+    <%end%>
+    <h4> <%= current_user.perfil.nombre + " " +current_user.perfil.apellido%></h4>
+    <h4> <%= current_user.perfil.phone %> </h4>
+    <h4><%= current_user.email %> </h4>
+   <%if current_user.perfil.id == @perfil.id%>
+    <h2><%= link_to "Edit", edit_perfil_path(current_user.perfil), class: "btn btn-danger" %></h2>
+    <% end %>
+  </div>
+</div>
+<%if current_user.perfil.id == @perfil.id%>
+<h2 class="text-center"><%= link_to "Add bbq",new_barbacoa_path(current_user.perfil), class: "btn btn-danger" %></h2>
+<% end %>
+<div class="container space">
+<% @perfil.barbacoas.reverse.each do |bbq|%>
+<div class="col-md-4">
+  <%= link_to barbacoa_path(bbq) do %>
+  <div class="text-center logo">
+    <%= image_tag("logo.png") %>
+    <p><%= bbq.titulo %></p>
+    <p><%= bbq.modelo %></p>
+  <% end %>
+   <% if bbq.disponible === TRUE %>
+      <p style="color: #22ea63 !important;">Disponible</p>
+      <% else %>
+      <p style="color: #e4180a !important;">No disponible</p>
+    <% end %>
+    </div>
+</div>
+<% end %>
+<% end %>

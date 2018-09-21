@@ -1,0 +1,16 @@
+ <div class="container">
+  <br>
+  <h2>Nuevo bbq</h2>
+  <br>
+  <p>Ingresa los datos de la barbabacoa que deseas agregar</p>
+  <%= simple_form_for [@perfil, @barbacoa] do |f| %>
+  <%= f.input :titulo %>
+  <%= f.input :modelo %>
+  <%= f.input :disponible %>
+  <%= f.input :descripcion %>
+  <p>Precio por dia</p>
+  <%= f.input :precio %>
+  <br>
+  <%= f.submit class: "btn btn-danger" %>
+  <% end %>
+</div>
