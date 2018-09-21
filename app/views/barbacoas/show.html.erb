@@ -28,6 +28,8 @@
   <p><%= @barbacoa.descripcion%></p>
   <h5>Precio por dia</h5>
   <h3><%= @barbacoa.precio%> $</h3>
+  <h3>Dirreccion</h3>
+  <p><%= @barbacoa.address %></p>
   <%if current_user.perfil.id == @perfil.id%>
   <h3><%= link_to "Edit", edit_barbacoa_path(@barbacoa),  class: "btn btn-danger"%></h3>
   <% else %>
@@ -37,4 +39,6 @@
 
 </div>
 
-
+<br>
+<br>
+<br>

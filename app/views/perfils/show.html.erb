@@ -21,7 +21,7 @@
     <%if current_user.perfil.id != @perfil.id%>
       <h2>Contacta</h2>
     <%end%>
-    <h4> <%= current_user.perfil.nombre + " " +current_user.perfil.apellido%></h4>
+    <h4> <%= current_user.perfil.nombre + " " +@perfil.apellido%></h4>
     <h4> <%= current_user.perfil.phone %> </h4>
     <h4><%= current_user.email %> </h4>
    <%if current_user.perfil.id == @perfil.id%>
@@ -37,7 +37,7 @@
 <div class="col-md-4">
   <%= link_to barbacoa_path(bbq) do %>
   <div class="text-center logo">
-    <%= image_tag("logo.png") %>
+    <%= cl_image_tag bbq.photo, height: 200, crop: :fill %>
     <p><%= bbq.titulo %></p>
     <p><%= bbq.modelo %></p>
   <% end %>
