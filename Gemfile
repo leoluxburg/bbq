@@ -32,7 +32,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "geocoder"
-gem 'webpacker', github: 'rails/webpacker'
+#gem 'webpacker', github: 'rails/webpacker'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
