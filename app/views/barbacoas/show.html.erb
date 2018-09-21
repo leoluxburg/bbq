@@ -16,6 +16,8 @@
 </div>
 </div>
 <div class="container text-center">
+  <%= cl_image_tag @barbacoa.photo, height: 200, crop: :fill %>
+
   <h2><%= @barbacoa.titulo.capitalize %> </h2>
   <h4><%= @barbacoa.modelo %></h4>
   <% if @barbacoa.disponible === TRUE %>

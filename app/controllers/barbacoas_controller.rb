@@ -34,7 +34,7 @@ class BarbacoasController < ApplicationController
   private
 
   def barbacoa_params
-    params.require(:barbacoa).permit(:titulo,:modelo,:disponible,:descripcion,:precio)
+    params.require(:barbacoa).permit(:titulo,:modelo,:disponible,:descripcion,:precio,:photo)
   end
 
   def set_perfil

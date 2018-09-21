@@ -20,7 +20,7 @@
 <div class="col-xl-4">
   <%= link_to barbacoa_path(bbq) do %>
   <div class="text-center logo">
-    <%= image_tag("logo.png") %>
+    <%= cl_image_tag bbq.photo, height: 200, crop: :fill %>
     <p><%= bbq.titulo %></p>
     <p><%= bbq.modelo %></p>
   <% end %>

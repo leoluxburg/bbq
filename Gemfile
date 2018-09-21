@@ -28,6 +28,10 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'simple_form'
 gem 'font-awesome-sass'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
